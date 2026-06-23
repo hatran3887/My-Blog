@@ -25,3 +25,69 @@ h1 {
 .post p {
     margin: 10px 0;
 }
+
+#add {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+}
+
+#add label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+#add input[type="text"],
+#add input[type="author"],
+#add textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+#add textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+#add input[type="text"]:focus,
+#add input[type="author"]:focus,
+#add textarea:focus {
+  border-color: #4f7ef8;
+  box-shadow: 0 0 0 3px rgba(79, 126, 248, 0.12);
+  background: #fff;
+}
+
+.btn {
+  padding: 10px 24px;
+  background: #4f7ef8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn:hover {
+  background: #3a6ae8;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
