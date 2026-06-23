@@ -1,4 +1,6 @@
 import json
+from curses.ascii import isdigit
+
 from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
@@ -28,12 +30,29 @@ def add():
         with open('storage/blog_posts.json', 'r') as f:
             posts = json.load(f)
 
-        posts.append({'id': len(posts) + 1, 'title': title, 'author': author, 'content': content})
+        posts.append({'id': posts[-1]['id'] + 1, 'title': title, 'author': author, 'content': content})
         with open('storage/blog_posts.json', 'w') as f:
             json.dump(posts, f)
         return redirect(url_for('index'))
 
     return render_template('add.html')
+
+
+@app.route('/delete/<post_id>', methods=['POST'])
+def delete(post_id):
+    """
+    The delete route deletes the post with given id and redirects to the index route
+    """
+    if not isdigit(post_id):
+        print('Invalid post id')
+        return redirect(url_for('index'))
+
+    with open('storage/blog_posts.json', 'r') as f:
+        posts = json.load(f)
+    posts = [post for post in posts if post['id'] != int(post_id)]
+    with open('storage/blog_posts.json', 'w') as f:
+        json.dump(posts, f)
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
