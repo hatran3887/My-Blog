@@ -16,6 +16,10 @@
         <form action="{{ url_for('delete', post_id=post['id']) }}" method="post">
             <button class="btn btn-danger" type="submit">Delete</button>
         </form>
+        <br>
+        <form action="{{ url_for('update', post_id=post['id']) }}" method="get">
+            <button class="btn" type="submit">Update</button>
+        </form>
     </div>
     {% endfor %}
     <br><br>

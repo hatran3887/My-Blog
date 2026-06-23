@@ -26,14 +26,14 @@ h1 {
     margin: 10px 0;
 }
 
-#add {
+.blog_form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   max-width: 480px;
 }
 
-#add label {
+.blog_form label {
   display: block;
   font-size: 0.85rem;
   font-weight: 500;
@@ -43,9 +43,9 @@ h1 {
   margin-bottom: 6px;
 }
 
-#add input[type="text"],
-#add input[type="author"],
-#add textarea {
+.blog_form input[type="text"],
+.blog_form input[type="author"],
+.blog_form textarea {
   width: 100%;
   padding: 10px 14px;
   border: 1.5px solid #ddd;
@@ -57,14 +57,14 @@ h1 {
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-#add textarea {
+.blog_form textarea {
   min-height: 140px;
   resize: vertical;
 }
 
-#add input[type="text"]:focus,
-#add input[type="author"]:focus,
-#add textarea:focus {
+.blog_form input[type="text"]:focus,
+.blog_form input[type="author"]:focus,
+.blog_form textarea:focus {
   border-color: #4f7ef8;
   box-shadow: 0 0 0 3px rgba(79, 126, 248, 0.12);
   background: #fff;
